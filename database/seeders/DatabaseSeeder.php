@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             userSeeder::class,
             serviceSeeder::class,
             serviceDetailSeeder::class,
+            transactionSeeder::class,
         ]);
     }
 }

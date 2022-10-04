@@ -10,6 +10,9 @@ class ServiceDetail extends Model
 {
     use HasFactory, softDeletes;
 
+    // protected table
+    protected $table = 'service_detail';
+
     protected $fillable = [
         'service_id',
         'name',

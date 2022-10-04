@@ -32,18 +32,18 @@
 
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-shopping-cart"></i>
+              <i class="nav-icon fas fa-car"></i>
               <p>
-                Transactions
+                Booking
               </p>
             </a>
           </li>
 
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-video"></i>
+              <i class="nav-icon fa fa-credit-card"></i>
               <p>
-                Movies
+                Transaction
               </p>
             </a>
           </li>
