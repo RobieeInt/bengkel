@@ -26,7 +26,7 @@ return new class extends Migration
             $table->float('total_price');
             $table->string('transaction_code');
             $table->string('address');
-            $table->string('phone_number');
+            $table->string('phone_number')->nullable();
             $table->string('service_date');
             $table->timestamps();
             $table->softDeletes();
