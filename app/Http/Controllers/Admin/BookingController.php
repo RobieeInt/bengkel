@@ -134,9 +134,14 @@ class BookingController extends Controller
     public function destroy($id)
     {
         $booking = Transaction::find($id);
-        $booking->delete();
 
-        return redirect()->route('admin.booking.index')->with('success', 'Booking deleted successfully');
+        // cannot delete if status = proses
+        if($booking->status == 'proses' || $booking->status == 'selesai'){
+            return redirect()->route('admin.booking.index')->with('fail', 'Data tidak bisa dihapus karena dalam proses pengerjaan atau sudah selesai');
+        } else {
+            $booking->delete();
+            return redirect()->route('admin.booking.index')->with('success', 'Booking deleted successfully');
+        }
     }
 
     //public function get service detail

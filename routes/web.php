@@ -20,12 +20,12 @@ use App\Http\Controllers\Admin\LoginController;
 //     return view('welcome');
 // });
 
+Route::view('/', 'admin.auth')->name('admin.login');
 Route::get('admin/login', [LoginController::class, 'index'])->name('admin.login');
 Route::post('admin/login', [LoginController::class, 'authenticate'])->name('admin.login.auth');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function () {
-    // Route::view('/', 'admin.dashboard')->name('admin.dashboard');
 
     //logout
     Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');

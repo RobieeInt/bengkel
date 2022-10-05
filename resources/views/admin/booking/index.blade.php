@@ -184,5 +184,23 @@
 
     });
 </script>
+
+{{-- //toast alert fail --}}
+@elseif(session()->has('fail'))
+<script>
+    $(document).Toasts('create', {
+    icon: 'fas fa-thumbs-down',
+    class: 'bg-danger m-1 text-teal align-items-center text-justify width:20px ',
+    autohide: true,
+    delay: 15000,
+    title: 'Informasi',
+    //body session get succes
+    body: '{{ session()->get('fail') }} ',
+    position: 'bottomLeft',
+    // fixed: true,
+    subtitle: 'Gagal',
+
+    });
+</script>
 @endif
 @endsection
