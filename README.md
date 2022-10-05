@@ -4,5 +4,10 @@
 2. Extract filenya terus jalankan composer install
 3. Nyalain Web server buat databasenya bisa pakai Xampp / HeidiSql 
 4. Sesuaikan konfigurasi .env
-5. Jalankan php artisan serve
+5. jalanin php artisan migrate --seed
+5. dan Jalankan php artisan serve
+
+
+Login: admin 
+password: 123
 
