@@ -64,8 +64,47 @@
                                     <td class="text-center">{{$booking->service_date}}</td>
 
                                     <td class="text-center">
+                                        {{-- //change status to selesai --}}
+                                        <form action="{{ route('changeStatus', $booking->id) }}" method="POST"
+                                            class="d-inline">
+                                            @csrf
+                                            @method('PUT')
+                                            {{-- //giving modal before delete --}}
+                                            <button type="button" class="btn btn-success" data-toggle="modal"
+                                                data-target="#changeModal-{{ $booking->id }}">
+                                               Selesai
+                                            </button>
+                                            <div class="modal fade" id="changeModal-{{ $booking->id }}" tabindex="-1"
+                                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Delete
+                                                                booking
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Rubah Transaksi booking <strong><span
+                                                                    class="text-teal text-uppercase">{{
+                                                                    $booking->transaction_code }}</span></strong>
+                                                            Menjadi Selesai ?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success">Rubah</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
                                         <a href="{{ route('admin.booking.edit', $booking->id) }}"
-                                            class="btn btn-secondary mb-2"><i class="fas fa-edit"></i>Edit</a> <br>
+                                            class="btn btn-secondary mb-2 mt-2"><i class="fas fa-edit"></i>Edit</a> <br>
                                         <form action="{{ route('admin.booking.destroy', $booking->id) }}" method="POST"
                                             class="d-inline">
                                             @csrf
@@ -89,10 +128,10 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            Are you sure you want to delete <strong><span
+                                                           Yakin mau hapus Transaksi booking <strong><span
                                                                     class="text-teal text-uppercase">{{
-                                                                    $booking->title }}</span></strong>
-                                                            booking?
+                                                                    $booking->transaction_code }}</span></strong>
+                                                            ini?
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"

@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('description');
             $table->enum('status', ['antrian', 'proses', 'selesai']);
             $table->enum('payment_status', ['belum bayar', 'sudah bayar']);
-            $table->string('payment_proof');
+            $table->string('payment_proof')->nullable();
             $table->float('total_price');
             $table->string('transaction_code');
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('service_date');
             $table->timestamps();
